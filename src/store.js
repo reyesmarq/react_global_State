@@ -1,12 +1,7 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 import useReducers from 'usereducers';
 
 const StoreContext = createContext();
-
-
-/****************************************************************************
- * UTILS
- ***************************************************************************/
 
 
 /****************************************************************************
@@ -56,8 +51,10 @@ export const StoreProvider = ({ children }) => {
   // const [state, dispatch] = useReducer(reducerAge, initialAge);
   const [state, dispatch] = useReducers(user, age);
 
+  const ProviderValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+
   return (
-    <StoreContext.Provider value={{ state, dispatch }}>
+    <StoreContext.Provider value={ProviderValue}>
       {children}
     </StoreContext.Provider>
   );
