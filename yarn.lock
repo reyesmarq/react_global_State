@@ -10049,7 +10049,7 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
-react@^16.13.1, react@^16.8.5:
+react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -11934,13 +11934,6 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
-
-usereducers@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/usereducers/-/usereducers-1.0.1.tgz#185ed7808f623fa385845b2241dab45e7fab623e"
-  integrity sha512-3Iqx+TlPPUzye2Zc3XQ6i4kRpQ35P5vBSgy4EXVbPgrz/HzWdvnSZlCawLilxynGo6DdsADMzfbWh6DTWmUwvg==
-  dependencies:
-    react "^16.8.5"
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
