@@ -4,7 +4,10 @@ import { useStore } from '../store';
 const Footer = () => {
   const {
     state: { username, age },
+    state,
   } = useStore();
+
+  console.log('state:', state);
 
   return (
     <>
