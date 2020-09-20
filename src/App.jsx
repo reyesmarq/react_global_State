@@ -5,6 +5,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Section from './components/Section';
 import { useStore } from './store';
+import ShowUser from './components/ShowUser';
 
 function App() {
   const {
@@ -23,14 +24,7 @@ function App() {
               <Link to="/about">About</Link>
             </li>
           </ul>
-          <p>
-            username:
-            {user && user.username ? user.username : null}
-          </p>
-          <p>
-            age:
-            {age && age.age ? age.age : null}
-          </p>
+          <ShowUser />
         </nav>
 
         <Route path="/" exact component={Home} />

@@ -1,15 +1,13 @@
 import React from 'react';
 import { useStore } from '../store';
 
-const Footer = () => {
+const ShowUser = () => {
   const {
     state: { username, age },
   } = useStore();
 
   return (
     <>
-      <hr />
-      <h1> footer </h1>
       <p>
         username:
         {username ? username : null}
@@ -22,4 +20,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ShowUser;
