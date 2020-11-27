@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer } from 'react';
 
 /****************************************************************************
  * INITIAL STATE
@@ -10,6 +10,8 @@ const initialUsername = {
 const initialAge = {
   age: '',
 };
+
+const initialState = Object.assign(initialUsername, initialAge);
 
 /****************************************************************************
  * REDUCERS
@@ -38,4 +40,14 @@ const ageReducer = (state = initialAge, action) => {
   }
 };
 
-export { initialUsername, initialAge, userReducer, ageReducer };
+const combineReducers = (...reducers) => (state = {}, action) => {
+  for (let i = 0; i < reducers.length; i++) state = reducers[i](state, action);
+  return state;
+};
+
+const [state, dispatch] = useReducer(
+  combineReducers(userReducer, ageReducer),
+  initialState
+);
+
+export { state, dispatch };
