@@ -1,4 +1,6 @@
-import { useReducer } from 'react';
+import { combineReducers } from '../../helpers/combineReducers';
+
+// TODO: how to refactor initialstate and combine reducers to maintain just one array instead of two, state and reducers
 
 /****************************************************************************
  * INITIAL STATE
@@ -11,7 +13,15 @@ const initialAge = {
   age: '',
 };
 
-const initialState = Object.assign(initialUsername, initialAge);
+const initialGithubUser = {
+  githubUser: '',
+};
+
+const initialState = Object.assign(
+  initialUsername,
+  initialAge,
+  initialGithubUser
+);
 
 /****************************************************************************
  * REDUCERS
@@ -40,14 +50,18 @@ const ageReducer = (state = initialAge, action) => {
   }
 };
 
-const combineReducers = (...reducers) => (state = {}, action) => {
-  for (let i = 0; i < reducers.length; i++) state = reducers[i](state, action);
-  return state;
+const githubUserReducer = (state = initialGithubUser, action) => {
+  switch (action.type) {
+    case 'github_login':
+      return {
+        ...state,
+        githubUser: action.payload,
+      };
+    default:
+      return state;
+  }
 };
 
-const [state, dispatch] = useReducer(
-  combineReducers(userReducer, ageReducer),
-  initialState
-);
+const reducer = combineReducers(userReducer, ageReducer, githubUserReducer);
 
-export { state, dispatch };
+export { reducer, initialState };

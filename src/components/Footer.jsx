@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useStore } from '../store';
 
 const Footer = () => {
   const {
     state: { username, age },
-    state,
   } = useStore();
 
-  console.log('state:', state);
+  const renders = useRef(0);
 
   return (
     <>
       <hr />
-      <h1> footer </h1>
+      <h1> footer {renders.current++}</h1>
       <p>
         username:
         {username ? username : null}
