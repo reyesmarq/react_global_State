@@ -4,13 +4,9 @@ import Home from './components/Home';
 import About from './components/About';
 import Footer from './components/Footer';
 import Section from './components/Section';
-import { useStore } from './store';
 import ShowUser from './components/ShowUser';
 
 function App() {
-  const {
-    state: { user, age },
-  } = useStore();
 
   return (
     <Router>

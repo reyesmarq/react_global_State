@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useStore } from '../store';
-import { getGithubLogin, getGithub, getGithubUserWithThunk } from '../store/actions';
+import { getGithubUserWithThunk } from '../store/actions';
 
 const GithubUser = () => {
   const {
@@ -12,7 +12,12 @@ const GithubUser = () => {
     dispatch(getGithubUserWithThunk());
   }, []);
 
-  return <h3>github user: {githubUser || 'loading...'}</h3>;
+  return (
+    <h3>
+      github user:
+      {githubUser?.githubUser ? githubUser.githubUser : 'loading...'}
+    </h3>
+  );
 };
 
 export default GithubUser;

@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>home {renders.current++}</h1>
+      <h1>home || renders: {renders.current++}</h1>
       <GithubUser />
     </>
   );

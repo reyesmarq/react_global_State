@@ -3,23 +3,19 @@ import { useStore } from '../store';
 
 const Footer = () => {
   const {
-    state: { username, age },
+    state: { age, user },
   } = useStore();
+
+  // console.log('state', state);
 
   const renders = useRef(0);
 
   return (
     <>
       <hr />
-      <h1> footer {renders.current++}</h1>
-      <p>
-        username:
-        {username ? username : null}
-      </p>
-      <p>
-        age:
-        {age ? age : null}
-      </p>
+      <h1>footer || renders: {renders.current++}</h1>
+      <p>username: {user?.username ? user.username : null}</p>
+      <p>age: {age?.age ? age.age : null}</p>
     </>
   );
 };

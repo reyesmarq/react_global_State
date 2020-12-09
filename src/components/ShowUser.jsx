@@ -3,18 +3,18 @@ import { useStore } from '../store';
 
 const ShowUser = () => {
   const {
-    state: { username, age },
+    state: { user, age },
   } = useStore();
 
   return (
     <>
       <p>
         username:
-        {username ? username : null}
+        {user?.username ? user.username : null}
       </p>
       <p>
         age:
-        {age ? age : null}
+        {age?.age ? age.age : null}
       </p>
     </>
   );
